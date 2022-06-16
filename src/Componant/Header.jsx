@@ -4,7 +4,7 @@ import Popup from "./Popup";
 const Header = () =>{
     return(
         <>
-        <h2>Mohan</h2>
+        <h2>Hello {localStorage.getItem('name')}</h2>
         <Popup />
         </>
     )

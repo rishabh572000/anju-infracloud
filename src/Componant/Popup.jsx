@@ -1,14 +1,13 @@
-import { Button, Modal } from 'antd';
+import { Button, Modal, Input } from 'antd';
 import { useState } from 'react';
 
 const Popup = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [name, setName] = useState('');
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
 
   const handleOk = () => {
+    localStorage.setItem('name', name);
     setIsModalVisible(false);
   };
 
@@ -18,13 +17,8 @@ const Popup = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Open Modal
-      </Button>
       <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Input placeholder="What's Your Name" onChange={(e)=> setName(e.target.value)} />
       </Modal>
     </>
   );
