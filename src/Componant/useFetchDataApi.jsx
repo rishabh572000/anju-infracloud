@@ -13,3 +13,33 @@ const useFetchDataApi = (url) => {
 };
 
 export default useFetchDataApi;
+
+// import React, {useEffect} from "react";
+// import { connect } from "react-redux";
+// import { fetchUsers } from "../Redux/action";
+
+// function useFetchDataApi({userData, fetchUsers}){
+//   useEffect(()=>{
+//     fetchUsers()
+//   }, [])
+//   return(
+//     <>
+//     {console.log(userData.users)}
+//     </>
+//   )
+// }
+// const mapStateToProps = state =>{
+//   return{
+//     userDate:state.user
+//   }
+// }
+// const mapDispatchToProps = dispatch =>{
+//   return{
+//     fetchUsers : () => dispatch(fetchUsers())
+//   }
+// }
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(useFetchDataApi)

@@ -1,12 +1,31 @@
 import Header from './Componant/Header';
 import TableData from './Componant/TableData';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,Routes,
+  Link,
+} from "react-router-dom";
+import CommentAll from './Componant/CommentAll';
+// import Switch as 'switch'
 
 function App() {
   return (
-    <div className="App">
+    <Router>    
+      <div className="App">
       <Header />
-      <TableData url={"https://jsonplaceholder.typicode.com/posts"}/>
+      {/* <Link to="/">Home</Link>
+      <Link to="/about">About</Link> */}
+      
+      {/* <CommentAll />     */}
+
+      <Routes>
+          <Route path="/" element={<TableData url={"https://jsonplaceholder.typicode.com/posts"}  id='id' nameman='title' body='body'/>} />
+          <Route path="/comment" element={<CommentAll />} />
+        </Routes>
     </div>
+    </Router>
+
   );
 }
 
